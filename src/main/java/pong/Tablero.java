@@ -172,6 +172,11 @@ public class Tablero extends JPanel implements Runnable {
     }
     
     private void accionColisionRaquetaConPelota(Pelota pelota, Raqueta raqueta) {
+        if (pelota.getDx() > 0) {
+            pelota.setX(pelota.getX()-1);
+        } else {
+            pelota.setX(pelota.getX()+1);
+        }
         pelota.setDx(-pelota.getDx());
         sonidos.tocarSonido("rebote_1");
         pelota.setDx(pelota.getDx()+0.1);
